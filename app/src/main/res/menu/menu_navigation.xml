@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/wallet"
+        android:title="Wallet"
+        android:icon="@drawable/ic_baseline_account_balance_24" />
+
+    <item
+        android:id="@+id/transactions"
+        android:title="Transactions"
+        android:icon="@drawable/ic_outline_paid_24" />
+
+    <item
+        android:id="@+id/coins"
+        android:title="Live Stats"
+        android:icon="@drawable/ic_baseline_auto_graph_24" />
+
+    <!--
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_baseline_settings_24" /> -->
+
+</menu>

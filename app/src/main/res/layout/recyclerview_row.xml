@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="500"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_marginStart="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <LinearLayout
+        android:layout_marginStart="20dp"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="250"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/tvSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Symbol" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvPriceUsd"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="150"
+        android:text="price USD" />
+
+    <TextView
+        android:id="@+id/tvChangePercent24Hr"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="18sp"
+        android:layout_weight="99"
+        android:gravity="center_vertical|end"
+        android:text="change%"
+        android:layout_marginEnd="10dp"/>
+
+</LinearLayout>

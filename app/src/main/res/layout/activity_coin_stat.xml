@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coin_stat_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:id="@+id/coinRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="-100dp"
+        android:orientation="horizontal"
+        android:weightSum="500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
+
+        <ImageView
+            android:id="@+id/coinIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_foreground" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/coinName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                app:layout_constraintStart_toEndOf="@id/coinIcon" />
+
+            <TextView
+                android:id="@+id/coinSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/coinName" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/coinPriceUsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|end"
+            app:layout_constraintStart_toEndOf="@id/coinName" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/singleCoinYouHave"
+        app:layout_constraintTop_toBottomOf="@id/coinRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="you have this many coins" />
+
+    <TextView
+        android:id="@+id/singelCoinCalculation"
+        app:layout_constraintTop_toBottomOf="@id/singleCoinYouHave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Value of 1 bitcoin
+" />
+
+    <TextView
+        android:id="@+id/singelCoinYourValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="how much your bitcoin is worth"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singelCoinCalculation" />
+
+    <TextView
+        android:id="@+id/singelCoinLastUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/singelCoinYourValue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <org.eazegraph.lib.charts.ValueLineChart
+        android:id="@+id/lineChartView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        app:egCurveSmoothness="0.4"
+        app:egIndicatorLineColor="#FE6DA8"
+        app:egLegendHeight="40dp"
+        app:egShowStandardValue="true"
+        app:egUseCubic="true"
+        app:egUseOverlapFill="true"
+        app:layout_constraintTop_toBottomOf="@+id/singelCoinLastUpdate" />
+
+    <Button
+        android:id="@+id/buy_coin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Buy"
+        app:layout_constraintTop_toBottomOf="@id/lineChartView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sell_coin"/>
+
+    <Button
+        android:id="@+id/sell_coin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Sell"
+        app:layout_constraintTop_toBottomOf="@id/lineChartView"
+        app:layout_constraintStart_toEndOf="@id/buy_coin"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/purple_500"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintStart_toStartOf="@id/coin_stat_parent"
+        app:layout_constraintBottom_toBottomOf="@id/coin_stat_parent"
+        app:menu="@menu/menu_navigation" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your coins: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/singleCoinYouHave"
+        app:layout_constraintEnd_toStartOf="@+id/singleCoinYouHave"
+        app:layout_constraintStart_toStartOf="@+id/coinRow" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Value of 1 coin"
+        app:layout_constraintBaseline_toBaselineOf="@+id/singelCoinCalculation"
+        app:layout_constraintEnd_toStartOf="@+id/singelCoinCalculation"
+        app:layout_constraintStart_toStartOf="@+id/coinRow" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/singelCoinYourValue"
+        app:layout_constraintEnd_toStartOf="@+id/singelCoinYourValue"
+        app:layout_constraintStart_toStartOf="@+id/coinRow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

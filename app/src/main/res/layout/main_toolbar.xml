@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/main_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@color/purple_500"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleText"
+        android:text="USD:"
+        android:textColor="@color/white"
+        style="@style/Toolbar.TitleText"
+        />
+
+    <TextView
+        android:id="@+id/free_coins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/loading"
+        android:textColor="@color/white"
+        style="@style/Toolbar.TitleText"
+        />
+
+
+
+
+</androidx.appcompat.widget.Toolbar>
