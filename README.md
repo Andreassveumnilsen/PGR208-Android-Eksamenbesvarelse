@@ -6,7 +6,7 @@ Oppgave vår var å lage en app for kjøp og salg cryptovaluta. Appen skulle lis
 Oppgave ble sensusert til en B.
 
 
-#Report PGR208 Exam
+# Report PGR208 Exam
 
 We think we covered all the screens included in the exam. There are pictures of the screens we have implemented further down on the next page. 
 
